@@ -19,4 +19,8 @@ object Functions extends App {
     else aString + aRepeatedFunction(aString, n-1)
   }
 
+  println(aRepeatedFunction("hello", 3))
+
+  // In a normal language you would use loops, but in Scala you use RECURSION. FUNDAMENTAL IDEA.
+
 }
