@@ -52,11 +52,21 @@ object Functions extends App {
   def prime(n: Int): Boolean = {
     def testPrime(n: Int, divisor: Int): Boolean = {
       if(n % divisor == 0) false
-      else if (divisor >= scala.math.pow(n,0.5)) true
+      else if (divisor >= n/2) true
       else testPrime(n, divisor + 2)
     }
     if (n % 2 == 0) false
     else testPrime(n, 3)
+  }
+
+  //given answer
+
+  def isPrime(n:Int): Boolean = {
+    def isPrimeUntil(t: Int): Boolean =
+      if (t <= 1) true
+      else n % t != 0 && isPrimeUntil(t-1)
+
+    isPrimeUntil(n/2)
   }
 
   def fibonacci(n: Int): Int = {
@@ -69,9 +79,15 @@ object Functions extends App {
   println(fibonacci(4))
   println(fibonacci(5))
   println(prime(4))
+  println(isPrime(4))
   println(prime(5))
+  println(isPrime(5))
   println(prime(7))
+  println(isPrime(7))
   println(prime(11))
+  println(isPrime(11))
   println(prime(77))
+  println(isPrime(77))
   println(prime(9973))
+  println(isPrime(9973))
 }
